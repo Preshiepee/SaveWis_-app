@@ -1,0 +1,175 @@
+:root {
+    --bg-color-light: rgba(255, 255, 255, 0.95);
+    --bg-color-dark: rgba(30, 30, 30, 0.9);
+    --text-color-light: #2c3e50;
+    --text-color-dark: #ecf0f1;
+    --input-bg-light: #fff;
+    --input-bg-dark: #444;
+    --input-text-light: #000;
+    --input-text-dark: #fff;
+    --button-gradient: linear-gradient(to right, #f39c12, #f1c40f);
+    --button-gradient-hover: linear-gradient(to right, #e67e22, #f39c12);
+    --progress-gradient: linear-gradient(to right, #27ae60, #2ecc71);
+}
+
+body {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    background: url('https://images.unsplash.com/photo-1611078481213-8705e98b6a44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29pbnxlbnwwfHwwfHw%3D&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center fixed;
+    background-size: cover;
+    animation: fadeInBackground 2s ease-in;
+    color: var(--text-color-light);
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode {
+    color: var(--text-color-dark);
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+.container {
+    max-width: 400px;
+    margin: 60px auto;
+    background: var(--bg-color-light);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-30px);
+    animation: slideDown 0.8s ease forwards;
+    transition: background 0.5s ease, color 0.5s ease;
+    position: relative;
+}
+
+body.dark-mode .container {
+    background: var(--bg-color-dark);
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+h2 {
+    text-align: center;
+    animation: fadeInText 1.5s ease-in;
+    transition: color 0.5s ease;
+}
+
+input,
+button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: transform 0.2s, background 0.5s, color 0.5s, border 0.5s;
+}
+
+body.dark-mode input {
+    background: var(--input-bg-dark);
+    color: var(--input-text-dark);
+    border: 1px solid #555;
+}
+
+input:focus,
+button:hover {
+    transform: scale(1.05);
+}
+
+button {
+    background: var(--button-gradient);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: var(--button-gradient-hover);
+}
+
+#status {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    animation: blinkStatus 1.5s infinite;
+}
+
+.progress-bar {
+    background: #eee;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    transition: background 0.5s ease;
+}
+
+body.dark-mode .progress-bar {
+    background: #555;
+    transition: background 0.5s ease;
+}
+
+.progress {
+    height: 20px;
+    background: var(--progress-gradient);
+    width: 0%;
+    transition: width 1s ease-in-out, background 0.5s;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* Moon/Sun toggle button */
+
+.moon-toggle {
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    transition: transform 0.3s;
+}
+
+.moon-toggle:hover {
+    transform: scale(1.2);
+}
+
+
+/* Animations */
+
+@keyframes fadeInBackground {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes blinkStatus {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0.5;
+    }
+}

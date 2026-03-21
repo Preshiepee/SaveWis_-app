@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaveWise</title>
+    <link rel="stylesheet" href="fintech.css">
+</head>
+
+<body>
+    <!-- Login / Signup Container -->
+    <div class="container" id="auth">
+        <h2>SaveWise</h2>
+        <!-- Moon/Sun toggle button -->
+        <button id="modeToggle" class="moon-toggle">🌙</button>
+
+        <input id="name" placeholder="Name">
+        <input id="pin" type="password" placeholder="PIN">
+        <button onclick="signUp()">Sign Up</button>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <!-- Dashboard Container -->
+    <div class="container hidden" id="dashboard">
+        <!-- Moon/Sun toggle button -->
+        <button id="modeToggleDashboard" class="moon-toggle">🌙</button>
+
+        <div id="status"></div>
+        <h2 id="welcome"></h2>
+        <p>Savings: ₦<span id="savings">0</span></p>
+        <p>Goal: ₦<span id="goalDisplay">0</span></p>
+
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <input id="amount" placeholder="Add savings">
+        <button onclick="addSavings()">Add Savings</button>
+
+        <input id="goal" placeholder="Set goal">
+        <button onclick="setGoal()">Set Goal</button>
+
+        <button onclick="logout()">Logout</button>
+    </div>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyA0xBX-ykjt70vQBv2wGewVXgxEZ9Hh0Wg",
+            authDomain: "savewise-e7740.firebaseapp.com",
+            projectId: "savewise-e7740",
+            databaseURL: "https://savewise-e7740.firebaseio.com"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+    </script>'
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyA0xBX-ykjt70vQBv2wGewVXgxEZ9Hh0Wg",
+            authDomain: "savewise-e7740.firebaseapp.com",
+            projectId: "savewise-e7740",
+            databaseURL: "https://savewise-e7740.firebaseio.com"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+    </script> sf
+
+    <script src="fintech.js"></script>
+</body>
+
+</html>
