@@ -1,2 +1,2 @@
 # Fintech-app
-A simple savings and financial literacy tools for underserved communities
+A simple savings and financial literacy tools for underserved communities.
